@@ -1,4 +1,5 @@
 wallets/*.json
+real-Anchor.toml
 .anchor
 .DS_Store
 target

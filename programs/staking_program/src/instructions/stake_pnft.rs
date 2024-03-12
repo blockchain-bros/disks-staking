@@ -24,7 +24,7 @@ pub struct StakePnft<'info> {
     pub user_nft_token_account: Account<'info, TokenAccount>,
 
     #[account(
-        init_if_needed,
+        init,
         payer = owner,
         seeds = [RS_STAKE_SEED.as_ref(), nft_mint.key().as_ref()],
         bump,
@@ -32,6 +32,7 @@ pub struct StakePnft<'info> {
         token::authority = pool_account,
     )]
     pub dest_nft_token_account: Account<'info, TokenAccount>,
+    
     #[account(
         init,
         payer = owner,
@@ -47,6 +48,8 @@ pub struct StakePnft<'info> {
     pub token_program: Program<'info, Token>,
     /// CHECK: Checking in program
     pub update_authority: AccountInfo<'info>,
+    /// CHECK: Checking in program
+    pub metadata: AccountInfo<'info>,
     /// CHECK: Checking in program
     pub sysvar_instructions: AccountInfo<'info>,
     /// CHECK: Checking in program
@@ -78,8 +81,8 @@ pub fn stake_pnft(ctx: Context<StakePnft>) -> Result<()> {
         .destination_token(&ctx.accounts.dest_nft_token_account.to_account_info())
         .destination_owner(&ctx.accounts.owner)
         .mint(&ctx.accounts.nft_mint.to_account_info())
-        //.metadata(&ctx.accounts.metadata)
-        .authority(&ctx.accounts.update_authority)
+        .metadata(&ctx.accounts.metadata)
+        .authority(&ctx.accounts.owner)
         .payer(&ctx.accounts.owner)
         .system_program(&ctx.accounts.system_program)
         .sysvar_instructions(&ctx.accounts.sysvar_instructions)

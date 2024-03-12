@@ -31,6 +31,7 @@ pub struct StakeNft<'info> {
         token::authority = pool_account,
     )]
     pub dest_nft_token_account: Account<'info, TokenAccount>,
+    
     #[account(
         init,
         payer = owner,
