@@ -1,8 +1,8 @@
 #[programs.localnet]
-#rs_staking_program = "BjRFU6UPkGc3QM6gFH5WHjhJfY8zxdMDd1BePUEXV3NE"
+rs_staking_program = "8YNWwhscVwAL3i5w82FnTgPwM8d4Z31CzaGuPYH1wNWB"
 
 [programs.devnet]
-rs_staking_program = "BjRFU6UPkGc3QM6gFH5WHjhJfY8zxdMDd1BePUEXV3NE"
+rs_staking_program = "8YNWwhscVwAL3i5w82FnTgPwM8d4Z31CzaGuPYH1wNWB"
 
 #[programs.mainnet]
 #rs_staking_program = "BjRFU6UPkGc3QM6gFH5WHjhJfY8zxdMDd1BePUEXV3NE"
@@ -13,7 +13,7 @@ url = "https://anchor.projectserum.com"
 [provider]
 cluster = "localnet"
 #cluster = "devnet"
-wallet = "/home/sven/.config/solana/id.json"
+wallet = "/Users/sven/.config/solana/id.json"
 
 [scripts]
 test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
