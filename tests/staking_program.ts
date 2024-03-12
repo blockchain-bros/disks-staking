@@ -1,6 +1,6 @@
 import * as anchor from '@coral-xyz/anchor';
 import { Program } from '@coral-xyz/anchor';
-import { RsStakingProgram } from '../target/types/rs_staking_program';
+import { DisksStakingProgram } from '../target/types/disks_staking_program';
 import { SystemProgram, SYSVAR_RENT_PUBKEY } from "@solana/web3.js";
 import { Token, TOKEN_PROGRAM_ID, ASSOCIATED_TOKEN_PROGRAM_ID } from "@solana/spl-token";
 import { assert } from "chai";
@@ -23,7 +23,7 @@ describe('staking_program', () => {
   const provider = anchor.AnchorProvider.env();
   anchor.setProvider(provider);
 
-  const program = anchor.workspace.RsStakingProgram as Program<RsStakingProgram>;
+  const program = anchor.workspace.DisksStakingProgram as Program<DisksStakingProgram>;
   const superOwner = anchor.web3.Keypair.generate();
   const user = anchor.web3.Keypair.generate();
 

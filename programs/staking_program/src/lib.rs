@@ -7,10 +7,10 @@ pub mod states;
 
 use instructions::*;
 
-declare_id!("8YNWwhscVwAL3i5w82FnTgPwM8d4Z31CzaGuPYH1wNWB");
+declare_id!("2xW3UNDFF7Pdz72Zc855DFQyM4uS7zrtFzYVvjZmaY91");
 
 #[program]
-pub mod rs_staking_program {
+pub mod disks_staking_program {
     use super::*;
 
     pub fn initialize_staking_pool(

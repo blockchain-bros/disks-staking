@@ -14,7 +14,7 @@ import {
 } from '@solana/web3.js';
 import { TOKEN_PROGRAM_ID, ASSOCIATED_TOKEN_PROGRAM_ID, Token } from "@solana/spl-token";
 import bs58 from 'bs58';
-import { IDL } from "../target/types/rs_staking_program";
+import { IDL } from "../target/types/disks_staking_program";
 import * as Constants from "./constants";
 import * as Keys from "./keys";
 import NodeWallet from '@coral-xyz/anchor/dist/cjs/nodewallet';
