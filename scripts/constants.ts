@@ -1,10 +1,10 @@
 import { publicKey } from "@coral-xyz/anchor/dist/cjs/utils";
 import { PublicKey } from "@solana/web3.js";
 
-export const RS_PREFIX = "rs-nft-staking";
-export const RS_STAKEINFO_SEED = "rs-stake-info";
-export const RS_STAKE_SEED = "rs-nft-staking";
-export const RS_VAULT_SEED = "rs-vault";
+export const RS_PREFIX = "disks-nft-staking";
+export const RS_STAKEINFO_SEED = "disks-stake-info";
+export const RS_STAKE_SEED = "disks-nft-staking";
+export const RS_VAULT_SEED = "disks-vault";
 
 export const REWARD_PER_WEEK = 1000; // 0.001
 

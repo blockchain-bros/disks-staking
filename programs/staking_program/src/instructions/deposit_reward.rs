@@ -3,7 +3,7 @@ use anchor_lang::prelude::*;
 use anchor_spl::token::{Mint, Token, TokenAccount};
 
 #[derive(Accounts)]
-pub struct DepositSwrd<'info> {
+pub struct DepositCredits<'info> {
     #[account(mut)]
     funder: Signer<'info>,
 
@@ -33,7 +33,7 @@ pub struct DepositSwrd<'info> {
     token_program: Program<'info, Token>,
 }
 
-pub fn handle(ctx: Context<DepositSwrd>, amount: u64) -> Result<()> {
+pub fn handle(ctx: Context<DepositCredits>, amount: u64) -> Result<()> {
     // Transfer reward tokens into the vault.
     let cpi_ctx = CpiContext::new(
         ctx.accounts.token_program.to_account_info(),

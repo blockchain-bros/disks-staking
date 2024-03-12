@@ -6,7 +6,7 @@ use anchor_spl::{
 };
 
 #[derive(Accounts)]
-pub struct WithdrawSwrd<'info> {
+pub struct WithdrawCredits<'info> {
     #[account(mut)]
     admin: Signer<'info>,
     #[account(
@@ -46,7 +46,7 @@ pub struct WithdrawSwrd<'info> {
     pub rent: Sysvar<'info, Rent>,
 }
 
-pub fn handle(ctx: Context<WithdrawSwrd>) -> Result<()> {
+pub fn handle(ctx: Context<WithdrawCredits>) -> Result<()> {
     let vault_amount = ctx.accounts.reward_vault.amount;
 
     if vault_amount > 0 {

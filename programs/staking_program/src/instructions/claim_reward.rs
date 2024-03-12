@@ -72,7 +72,7 @@ pub fn claim_reward(ctx: Context<ClaimReward>) -> Result<()> {
     // calulate reward of this nft
     let pool_account = &mut ctx.accounts.pool_account;
     let reward_per_week = pool_account.reward_per_week;
-    // When withdraw nft, calculate and send reward SWRD
+    // When withdraw nft, calculate and send reward CREDITS
     let mut reward: u64 = staking_info.update_reward(timestamp, reward_per_week)?;
 
     let vault_balance = ctx.accounts.reward_vault.amount;

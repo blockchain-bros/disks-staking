@@ -9,12 +9,12 @@ import { ASSOCIATED_PROGRAM_ID } from '@coral-xyz/anchor/dist/cjs/utils/token';
 
 const PublicKey = anchor.web3.PublicKey;
 
-const SWRD_DECIMAL = 6;
+const DISKS_DECIMAL = 6;
 const GLOBAL_AUTHORITY_SEED = "global-authority";
-const RS_PREFIX = "rs-nft-staking";
-const RS_STAKEINFO_SEED = "rs-stake-info";
-const RS_STAKE_SEED = "rs-nft-staking";
-const RS_VAULT_SEED = "rs-vault";
+const RS_PREFIX = "disks-nft-staking";
+const RS_STAKEINFO_SEED = "disks-stake-info";
+const RS_STAKE_SEED = "disks-nft-staking";
+const RS_VAULT_SEED = "disks-vault";
 
 
 describe('staking_program', () => {
@@ -92,7 +92,7 @@ describe('staking_program', () => {
       user,
       superOwner.publicKey,
       null,
-      SWRD_DECIMAL,
+      DISKS_DECIMAL,
       TOKEN_PROGRAM_ID
     );
 
@@ -195,7 +195,7 @@ describe('staking_program', () => {
       program.programId
     );
 
-    const ix = await program.methods.depositSwrd(
+    const ix = await program.methods.depositCredits(
       new anchor.BN(deposit_amount)
     ).accounts({
       funder: superOwner.publicKey,
@@ -378,7 +378,7 @@ describe('staking_program', () => {
       program.programId
     );
 
-    const ix = await program.methods.withdrawSwrd().accounts({
+    const ix = await program.methods.withdrawCredits().accounts({
       admin: superOwner.publicKey,
       poolAccount: pool_account_pda,
       rewardVault: vault_pda,

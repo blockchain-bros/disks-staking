@@ -5,7 +5,6 @@ pub mod error;
 pub mod instructions;
 pub mod states;
 
-use constants::*;
 use instructions::*;
 
 declare_id!("8YNWwhscVwAL3i5w82FnTgPwM8d4Z31CzaGuPYH1wNWB");
@@ -29,12 +28,12 @@ pub mod rs_staking_program {
         unstake::unstake_nft(ctx)
     }
 
-    pub fn deposit_swrd(ctx: Context<DepositSwrd>, amount: u64) -> Result<()> {
+    pub fn deposit_credits(ctx: Context<DepositCredits>, amount: u64) -> Result<()> {
         // Transfer reward tokens into the vault.
         deposit_reward::handle(ctx, amount)
     }
 
-    pub fn withdraw_swrd(ctx: Context<WithdrawSwrd>) -> Result<()> {
+    pub fn withdraw_credits(ctx: Context<WithdrawCredits>) -> Result<()> {
         withdraw_reward::handle(ctx)
     }
 
