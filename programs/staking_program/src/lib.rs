@@ -7,7 +7,7 @@ pub mod states;
 
 use instructions::*;
 
-declare_id!("2xW3UNDFF7Pdz72Zc855DFQyM4uS7zrtFzYVvjZmaY91");
+declare_id!("ABxTX1onDRNRfQHadz2mE49e8pN84hrSfSx6cggaxiJk");
 
 #[program]
 pub mod disks_staking_program {
@@ -22,6 +22,10 @@ pub mod disks_staking_program {
 
     pub fn stake_nft(ctx: Context<StakeNft>) -> Result<()> {
         stake::stake_nft(ctx)
+    }
+
+    pub fn stake_pnft(ctx: Context<StakePnft>) -> Result<()> {
+        stake_pnft::stake_pnft(ctx)
     }
 
     pub fn unstake_nft(ctx: Context<WithdrawNft>) -> Result<()> {

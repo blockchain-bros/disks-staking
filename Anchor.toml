@@ -1,19 +1,18 @@
 #[programs.localnet]
-disks_staking_program = "2xW3UNDFF7Pdz72Zc855DFQyM4uS7zrtFzYVvjZmaY91"
+disks_staking_program = "ABxTX1onDRNRfQHadz2mE49e8pN84hrSfSx6cggaxiJk"
 
 [programs.devnet]
-disks_staking_program = "2xW3UNDFF7Pdz72Zc855DFQyM4uS7zrtFzYVvjZmaY91"
+disks_staking_program = "ABxTX1onDRNRfQHadz2mE49e8pN84hrSfSx6cggaxiJk"
 
 #[programs.mainnet]
-#disks_staking_program = "2xW3UNDFF7Pdz72Zc855DFQyM4uS7zrtFzYVvjZmaY91"
+#disks_staking_program = "ABxTX1onDRNRfQHadz2mE49e8pN84hrSfSx6cggaxiJk"
 
 [registry]
 url = "https://anchor.projectserum.com"
 
 [provider]
-cluster = "localnet"
-#cluster = "devnet"
-wallet = "/Users/sven/.config/solana/id.json"
+#cluster = "localnet"
+cluster = "devnet"
 
 [scripts]
 test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"

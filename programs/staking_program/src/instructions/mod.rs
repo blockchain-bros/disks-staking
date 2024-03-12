@@ -4,6 +4,9 @@ pub use initialize::*;
 pub mod stake;
 pub use stake::*;
 
+pub mod stake_pnft;
+pub use stake_pnft::*;
+
 pub mod claim_reward;
 pub use claim_reward::*;
 

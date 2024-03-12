@@ -103,7 +103,7 @@ describe('staking_program', () => {
     user_reward_account = await reward_mint.createAssociatedTokenAccount(user.publicKey);
     funder_vault_account = await reward_mint.createAssociatedTokenAccount(superOwner.publicKey);
 
-    user_reward_account = (await PublicKey.findProgramAddress(
+    user_reward_account = (PublicKey.findProgramAddressSync(
       [
         user.publicKey.toBuffer(),
         TOKEN_PROGRAM_ID.toBuffer(),
@@ -112,7 +112,7 @@ describe('staking_program', () => {
       ASSOCIATED_TOKEN_PROGRAM_ID
     ))[0];
 
-    funder_vault_account = (await PublicKey.findProgramAddress(
+    funder_vault_account = (PublicKey.findProgramAddressSync(
       [
         superOwner.publicKey.toBuffer(),
         TOKEN_PROGRAM_ID.toBuffer(),
@@ -140,14 +140,14 @@ describe('staking_program', () => {
     assert.ok(Number(_user_nft_token_account.amount) == 1);
 
     // create PDAs
-    const [pool_account_pda, bump] = await PublicKey.findProgramAddress(
+    const [pool_account_pda, bump] = PublicKey.findProgramAddressSync(
       [Buffer.from(RS_PREFIX)],
       program.programId
     );
 
     console.log("pool_account =", pool_account_pda.toBase58());
 
-    const [vault_pda, walletBump] = await PublicKey.findProgramAddress(
+    const [vault_pda, walletBump] = PublicKey.findProgramAddressSync(
       [
         Buffer.from(RS_VAULT_SEED),
         reward_mint.publicKey.toBuffer(),
@@ -186,7 +186,6 @@ describe('staking_program', () => {
       [Buffer.from(RS_PREFIX)],
       program.programId
     );
-
     const [vault_pda, walletBump] = await PublicKey.findProgramAddress(
       [
         Buffer.from(RS_VAULT_SEED),
